@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Social Connect</h1>
+    <nav>
+      <button onclick="showTab('profile')">Profile</button>
+      <button onclick="showTab('photos')">Photos</button>
+      <button onclick="showTab('music')">Music</button>
+      <button onclick="showTab('videos')">Videos</button>
+      <button onclick="showTab('feed')">Feed</button>
+      <button onclick="showTab('store')">Store</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Profile Tab -->
+    <section id="profile" class="tab">
+      <h2>User Profile</h2>
+      <button onclick="togglePrivacy()">Make Profile Private</button>
+    </section>
+
+    <!-- Photos Tab -->
+    <section id="photos" class="tab" style="display:none;">
+      <h2>Photos</h2>
+    </section>
+
+    <!-- Music Tab -->
+    <section id="music" class="tab" style="display:none;">
+      <h2>Music</h2>
+    </section>
+
+    <!-- Videos Tab -->
+    <section id="videos" class="tab" style="display:none;">
+      <h2>Long-form Videos</h2>
+    </section>
+
+    <!-- Feed Tab -->
+    <section id="feed" class="tab" style="display:none;">
+      <h2>Feed</h2>
+      <div id="contentFeed"></div>
+    </section>
+
+    <!-- Store Tab -->
+    <section id="store" class="tab" style="display:none;">
+      <h2>Online Store</h2>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

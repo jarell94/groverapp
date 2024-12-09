@@ -1,0 +1,27 @@
+import React, { useState, useEffect } from 'react';
+import io from 'socket.io-client';
+
+const socket = io('http://localhost:5000');
+
+function Feed() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    socket.on('newPost', (post) => {
+      setPosts((prevPosts) => [...prevPosts, post]);
+    });
+  }, []);
+
+  return (
+    <div>
+      <h2>Feed</h2>
+      {posts.map((post, index) => (
+        <div key={index} className="post">
+          <p>{post.content}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Feed;
